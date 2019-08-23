@@ -1,6 +1,6 @@
 class List < ApplicationRecord
-  belongs_to :cards
+  has_many :cards
 
-  validates :title, presence :true 
+  validates :title, presence: true 
   
 end

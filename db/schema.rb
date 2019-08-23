@@ -14,9 +14,12 @@ ActiveRecord::Schema.define(version: 2019_08_23_141509) do
 
   create_table "cards", force: :cascade do |t|
     t.string "content"
+    t.string "labels"
     t.integer "user_id"
+    t.integer "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_cards_on_list_id"
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
@@ -29,11 +32,9 @@ ActiveRecord::Schema.define(version: 2019_08_23_141509) do
   create_table "lists", force: :cascade do |t|
     t.string "title"
     t.boolean "creatable", default: false
-    t.integer "cards_id"
     t.boolean "done", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cards_id"], name: "index_lists_on_cards_id"
   end
 
   create_table "users", force: :cascade do |t|

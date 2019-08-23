@@ -1,7 +1,7 @@
 class Card < ApplicationRecord
   belongs_to :user
-  has_many :labels
-
-  validates :content, presence: true  
+  belongs_to :list
   
+  validates :content, presence: true  
+
 end

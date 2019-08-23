@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  creatable: false
+  cards: one
+  done: false
+
+two:
+  title: MyString
+  creatable: false
+  cards: two
+  done: false

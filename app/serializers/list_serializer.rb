@@ -1,5 +1,5 @@
 class ListSerializer < ActiveModel::Serializer
-  attributes :title, :creatable, :done
+  attributes :id, :title, :creatable, :done
 
   has_many :cards
 end

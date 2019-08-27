@@ -1,6 +1,14 @@
 class List < ApplicationRecord
-  has_many :cards
+  has_many :cards, inverse_of: :list
+
+  accepts_nested_attributes_for :cards
 
   validates :title, presence: true 
-  
+
+  def update_position
+    cards.each_with_index do |card, index|
+      card.position = index
+      card.save
+    end
+  end
 end

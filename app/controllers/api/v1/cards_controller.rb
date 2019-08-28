@@ -4,6 +4,9 @@ module Api
 
       def create
         @card = Card.new(card_params)
+        if(@card.position == 0)
+          @card.position = @card.list.cards.size + 1
+        end
         if @card.save
           render json: @card, satuts: :created 
         end
@@ -31,7 +34,7 @@ module Api
       private
 
       def card_params
-        params.permit(:id, :content, :labels, :user_id, :list_id, :position)
+        params.require(:card).permit!()
       end
 
       def cards_params

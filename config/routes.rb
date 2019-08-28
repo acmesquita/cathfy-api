@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 
   		post 'lists/:list_id/cards', to: "cards#create"
   		put 'lists/:list_id/cards/:id', to: "cards#update"
-  		put 'lists/:list_id/cards/', to: "cards#update_cards"
+			put 'lists/:list_id/cards/', to: "cards#update_cards"
+			
+			post 'lists/:list_id/cards/:card_id/items', to: "items#create"
+			put 'lists/:list_id/cards/:card_id/items/:id', to: "items#update"
   	end
   end
 end

@@ -1,6 +1,6 @@
 class CardSerializer < ActiveModel::Serializer
-  attributes :id, :content, :position, :description, :labels, :user
-
+  attributes :id, :content, :position, :description, :labels, :user, :items
+    
   def user
     object.user.photo
   end
@@ -9,4 +9,5 @@ class CardSerializer < ActiveModel::Serializer
     a = Array.new()
     a.push(object.labels)
   end
+
 end

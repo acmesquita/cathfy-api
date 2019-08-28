@@ -4,8 +4,8 @@ module Api
 
       def create
         @card = Card.new(card_params)
-        if(@card.position == 0)
-          @card.position = @card.list.cards.size + 1
+        if(@card.position == -1)
+          @card.position = @card.list.cards.size
         end
         if @card.save
           render json: @card, satuts: :created 

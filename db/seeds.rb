@@ -45,6 +45,7 @@ puts 'Create Lists'
   color = Label.find(rand(9)+1).color
   Card.create({
     content: Faker::Lorem.sentence(word_count: 5, supplemental: false, random_words_to_add: 6),
+    description: Faker::Lorem.sentence(word_count: 25, supplemental: false, random_words_to_add: 26),
     user: User.find(rand(3)+1),
     list: List.find(rand(3)+1),
     labels: color

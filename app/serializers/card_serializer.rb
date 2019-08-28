@@ -1,5 +1,5 @@
 class CardSerializer < ActiveModel::Serializer
-  attributes :id, :content, :position, :labels, :user
+  attributes :id, :content, :position, :description, :labels, :user
 
   def user
     object.user.photo

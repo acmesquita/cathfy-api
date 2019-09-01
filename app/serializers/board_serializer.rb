@@ -1,5 +1,7 @@
 class BoardSerializer < ActiveModel::Serializer
-  attributes :id, :title
+  attributes :id, :title, :color, :lists_size
 
-  has_many :lists
+  def lists_size
+    object.lists.size
+  end
 end

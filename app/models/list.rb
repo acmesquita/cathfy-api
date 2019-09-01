@@ -1,4 +1,5 @@
 class List < ApplicationRecord
+  belongs_to :board
   has_many :cards, inverse_of: :list
 
   accepts_nested_attributes_for :cards

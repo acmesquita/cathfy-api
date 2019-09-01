@@ -22,53 +22,58 @@ end
 puts 'Create Users'
 # Create Lists
 
-Board.create({
-  title: 'Teste 2'
-})
+3.times do
+  board = Board.create({
+    title: "Projeto #{rand(3)+1}",
+    color: Faker::Color.hex_color.to_s
+  })
+  List.create({
+    title: 'Tarefas',
+    creatable: true,
+    board: board
+  });
+  
+  List.create({
+    title: 'Fazendo',
+    board: board
+  });
+  
+  List.create({
+    title: 'Pausado',
+    board: board
+  });
+  
+  List.create({
+    title: 'Concluído',
+    done:true,
+    board: board
+  });
+end
 
-List.create({
-  title: 'Tarefas',
-  creatable: true,
-  board_id: 2
-});
+puts 'Create Boards'
 
-List.create({
-  title: 'Fazendo',
-  board_id: 2
-});
-
-List.create({
-  title: 'Pausado',
-  board_id: 2
-});
-
-List.create({
-  title: 'Concluído',
-  done:true,
-  board_id: 2
-});
 puts 'Create Lists'
 #Create Cards
-5.times do
-  color = Label.find(rand(9)+1).color
-  Card.create({
-    content: Faker::Lorem.sentence(word_count: 5, supplemental: false, random_words_to_add: 6),
-    description: Faker::Lorem.sentence(word_count: 25, supplemental: false, random_words_to_add: 26),
-    user: User.find(rand(3)+1),
-    list: List.find(rand(3)+1),
-    labels: color
-  })
+# 5.times do
+#   color = Label.find(rand(9)+1).color
+#   Card.create({
+#     content: Faker::Lorem.sentence(word_count: 5, supplemental: false, random_words_to_add: 6),
+#     description: Faker::Lorem.sentence(word_count: 25, supplemental: false, random_words_to_add: 26),
+#     user: User.find(rand(3)+1),
+#     list: List.find(rand(3)+1),
+#     labels: color
+#   })
 
-end
-puts 'Create Cards'
+# end
+# puts 'Create Cards'
 
-List.all.each do |list|
+# List.all.each do |list|
 
-  list.cards.each_with_index do |card, index|
-    card.position = index
-    card.save
-  end
+#   list.cards.each_with_index do |card, index|
+#     card.position = index
+#     card.save
+#   end
 
-end
+# end
 
-puts 'Update position to cards in lists'
+# puts 'Update position to cards in lists'

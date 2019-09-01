@@ -2,8 +2,10 @@ module Api
   module V1
     class ListsController < ApplicationController
       before_action :set_list, only: [:update]
+      before_action :set_board
+      
       def index
-				lists = List.order('created_at asc');
+				lists = @board.lists
 				render json: lists,status: :ok
       end
       
@@ -25,7 +27,9 @@ module Api
       def set_list
         @list = List.find params.require(:list_id)
       end
-      
+      def set_board
+        @board = Board.find params.require(:board_id)
+      end
     end
   end
 end

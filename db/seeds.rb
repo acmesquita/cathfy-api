@@ -22,26 +22,34 @@ end
 puts 'Create Users'
 # Create Lists
 
+Board.create({
+  title: 'Teste 2'
+})
+
 List.create({
   title: 'Tarefas',
-  creatable: true
+  creatable: true,
+  board_id: 2
 });
 
 List.create({
-  title: 'Fazendo'
+  title: 'Fazendo',
+  board_id: 2
 });
 
 List.create({
-  title: 'Pausado'
+  title: 'Pausado',
+  board_id: 2
 });
 
 List.create({
   title: 'Concluído',
-  done:true
+  done:true,
+  board_id: 2
 });
 puts 'Create Lists'
 #Create Cards
-15.times do
+5.times do
   color = Label.find(rand(9)+1).color
   Card.create({
     content: Faker::Lorem.sentence(word_count: 5, supplemental: false, random_words_to_add: 6),

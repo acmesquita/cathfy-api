@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace 'api' do
 		namespace 'v1' do
 			get '/boards', to: "boards#index"
+			post '/boards', to: "boards#create"
 
   		get 'boards/:board_id/lists', to: "lists#index"
 			put 'lists/:list_id', to: "lists#update"

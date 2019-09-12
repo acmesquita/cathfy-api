@@ -1,6 +1,7 @@
 module Api
   module V1
     class CardsController < ApplicationController
+      before_action :authenticate_user
 
       def create
         @card = Card.new(card_params)

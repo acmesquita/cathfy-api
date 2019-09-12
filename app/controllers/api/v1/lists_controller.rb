@@ -3,6 +3,7 @@ module Api
     class ListsController < ApplicationController
       before_action :set_list, only: [:update]
       before_action :set_board
+      before_action :authenticate_user
       
       def index
 				lists = @board.lists

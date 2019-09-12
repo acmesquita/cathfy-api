@@ -1,6 +1,7 @@
 module Api
   module V1
     class ItemsController < ApplicationController
+      before_action :authenticate_user
 
       def create
         @item = Item.create(items_params)

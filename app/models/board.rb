@@ -1,6 +1,7 @@
 class Board < ApplicationRecord
 
-    has_many :lists
+		has_many :lists
+		belongs_to :user
 
     def start_lists
 			List.create({

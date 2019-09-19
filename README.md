@@ -1,24 +1,22 @@
-# README
+# Cathfy Rails API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Prerequesites
 
-Things you may want to cover:
+Install Ruby 2.6.0
 
-* Ruby version
+```
+  rvm install 2.6.0
+```
 
-* System dependencies
+### Getting Starting
 
-* Configuration
+```
+  $ git clone https://github.com/acmesquita/cathfy-api.git
+  $ cd cathfy-api/
+  $ rails s -p 3000
+```
 
-* Database creation
+### Authentication
 
-* Database initialization
+This project using [tamplate Knock](https://github.com/acmesquita/blank-api-with-knock).
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

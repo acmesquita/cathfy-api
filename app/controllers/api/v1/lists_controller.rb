@@ -13,7 +13,7 @@ module Api
       def update
         
         if @list.update(list_params)
-          render json: @list, status: :success
+          render json: @list, status: :ok
         else
           render json: {error: 'Erro ao atualizar'}, status: :error
           end

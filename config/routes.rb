@@ -2,24 +2,24 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace 'api' do
 		namespace 'v1' do
-			post   'user_token', to: 'user_token#create'
-			
-			get    '/users', to: 'users#index'
-			get    '/users/current', to: 'users#current'
-			post   '/users/create', to: 'users#create'
-			
-			get '/boards', to: "boards#index"
-			post '/boards', to: "boards#create"
+			post   'user_token',                              to: 'user_token#create'
 
-  		get 'boards/:board_id/lists', to: "lists#index"
-			put 'lists/:list_id', to: "lists#update"
+			get    '/users',                                  to: 'users#index'
+			get    '/users/current',                          to: 'users#current'
+			post   '/users/create',                           to: 'users#create'
 
-  		post 'lists/:list_id/cards', to: "cards#create"
-  		put 'lists/:list_id/cards/:id', to: "cards#update"
-			put 'lists/:list_id/cards/', to: "cards#update_cards"
-			
-			post 'lists/:list_id/cards/:card_id/items', to: "items#create"
-			put 'lists/:list_id/cards/:card_id/items/:id', to: "items#update"
+			get    '/boards',                                 to: "boards#index"
+			post   '/boards',                                 to: "boards#create"
+
+  		get    'boards/:board_id/lists',                  to: "lists#index"
+			put    'lists/:list_id',                          to: "lists#update"
+
+  		post   'lists/:list_id/cards',                    to: "cards#create"
+  		put    'lists/:list_id/cards/:id',                to: "cards#update"
+			put    'lists/:list_id/cards/',                   to: "cards#update_cards"
+
+			post   'lists/:list_id/cards/:card_id/items',     to: "items#create"
+			put    'lists/:list_id/cards/:card_id/items/:id', to: "items#update"
   	end
   end
 end

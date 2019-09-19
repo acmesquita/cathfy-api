@@ -11,7 +11,7 @@ module Api
       def update
         @item = Item.find(params.require(:id))
         if @item.update(items_params)
-          render json: @item, status: :success
+          render json: @item, status: :ok
         else
           render json: {error: 'Erro ao atualizar'}, status: :error
         end

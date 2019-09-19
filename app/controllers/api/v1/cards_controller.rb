@@ -9,14 +9,14 @@ module Api
           @card.position = @card.list.cards.size
         end
         if @card.save
-          render json: @card, satuts: :created 
+          render json: @card, status: :created 
         end
       end
 
       def update
         @card = Card.find(params.require(:id))
         if @card.update(card_params)
-          render json: @card, status: :success
+          render json: @card, status: :ok
         else
           render json: {error: 'Erro ao atualizar'}, status: :error
         end
@@ -30,6 +30,8 @@ module Api
           puts up
           Card.update(id_card, up)
         end
+
+        head :ok
       end
       
       private

@@ -8,18 +8,17 @@ Rails.application.routes.draw do
 			get    '/users/current',                          to: 'users#current'
 			post   '/users/create',                           to: 'users#create'
 
-			get    '/boards',                                 to: "boards#index"
-			post   '/boards',                                 to: "boards#create"
+			resources 'boards', only: [:index, :create] do
+				get    '/lists',                                to: "lists#index"
+			end
 
-  		get    'boards/:board_id/lists',                  to: "lists#index"
-			put    'lists/:list_id',                          to: "lists#update"
-
-  		post   'lists/:list_id/cards',                    to: "cards#create"
-  		put    'lists/:list_id/cards/:id',                to: "cards#update"
-			put    'lists/:list_id/cards/',                   to: "cards#update_cards"
-
-			post   'lists/:list_id/cards/:card_id/items',     to: "items#create"
-			put    'lists/:list_id/cards/:card_id/items/:id', to: "items#update"
+			resources 'lists', only: [:update] do
+				put    '/cards',                                to: "cards#update_cards"
+				
+				resources 'cards', only: [:create, :update] do
+					resources 'items', only: [:create, :update]
+				end
+			end
   	end
   end
 end

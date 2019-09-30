@@ -26,7 +26,7 @@ module Api
         params.require(:list).permit(:id, :title, :creatable, :done, cards_attributes: [:id, :content, :labels, :position, :list_id])
       end
       def set_list
-        @list = List.find params.require(:list_id)
+        @list = List.find params.require(:id)
       end
       def set_board
         @board = Board.find params.require(:board_id)

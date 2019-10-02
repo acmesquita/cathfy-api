@@ -44,4 +44,18 @@ RSpec.describe User, type: :model do
     end
   end
   
+  context "pós validação" do
+    let(:user) { User.create!({email: 'Teste@teste.com', password: '12345678', username: 'Teste'}) }
+
+    it 'downcase no email' do
+      expect(user.valid?).to be true
+      expect(user.email).to eq("teste@teste.com")
+    end
+
+    it 'downcase no username' do
+      expect(user.valid?).to be true
+      expect(user.username).to eq("teste")
+    end
+  end
+  
 end

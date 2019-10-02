@@ -1,6 +1,21 @@
 {
   "RSpec": {
     "coverage": {
+      "/home/infoway/Workspace/estudos/cathfy/cathfy-api/app/models/card.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/infoway/Workspace/estudos/cathfy/cathfy-api/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/home/infoway/Workspace/estudos/cathfy/cathfy-api/app/models/user.rb": [
         1,
         null,
@@ -33,9 +48,21 @@
         null,
         null
       ],
-      "/home/infoway/Workspace/estudos/cathfy/cathfy-api/app/models/application_record.rb": [
+      "/home/infoway/Workspace/estudos/cathfy/cathfy-api/app/models/list.rb": [
         1,
         1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/home/infoway/Workspace/estudos/cathfy/cathfy-api/app/serializers/item_serializer.rb": [
@@ -333,33 +360,6 @@
         0,
         0
       ],
-      "/home/infoway/Workspace/estudos/cathfy/cathfy-api/app/models/list.rb": [
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/infoway/Workspace/estudos/cathfy/cathfy-api/app/models/card.rb": [
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0
-      ],
       "/home/infoway/Workspace/estudos/cathfy/cathfy-api/app/models/item.rb": [
         0,
         0,
@@ -376,6 +376,6 @@
         0
       ]
     },
-    "timestamp": 1570020530
+    "timestamp": 1570021314
   }
 }
